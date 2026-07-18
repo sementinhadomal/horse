@@ -167,7 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const WHOP_LINKS = {
         "10": "https://whop.com/checkout/ali-horses-10",
         "20": "https://whop.com/checkout/ali-horses-20",
+        "30": "https://whop.com/checkout/ali-horses-30",
         "50": "https://whop.com/checkout/ali-horses-50",
+        "70": "https://whop.com/checkout/ali-horses-70",
         "100": "https://whop.com/checkout/ali-horses-100",
         "250": "https://whop.com/checkout/ali-horses-250",
         "500": "https://whop.com/checkout/ali-horses-500"
