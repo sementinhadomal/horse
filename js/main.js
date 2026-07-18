@@ -210,7 +210,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (btn.closest('.donation-card')) {
                 const url = WHOP_LINKS[value];
                 if (url) {
-                    window.location.href = url;
+                    // Append UTM query parameters to Whop URL
+                    const utmData = getUtmData();
+                    const params = new URLSearchParams();
+                    Object.entries(utmData).forEach(([key, val]) => {
+                        if (val) params.set(key, val);
+                    });
+                    const queryString = params.toString();
+                    const finalRedirectUrl = queryString ? `${url}?${queryString}` : url;
+                    
+                    window.location.href = finalRedirectUrl;
                     return;
                 }
             }
@@ -246,7 +255,16 @@ document.addEventListener('DOMContentLoaded', () => {
         btnDoarAgora.addEventListener('click', () => {
             const url = WHOP_LINKS[currentSelectedValue];
             if (url) {
-                window.location.href = url;
+                // Append UTM query parameters to Whop URL
+                const utmData = getUtmData();
+                const params = new URLSearchParams();
+                Object.entries(utmData).forEach(([key, val]) => {
+                    if (val) params.set(key, val);
+                });
+                const queryString = params.toString();
+                const finalRedirectUrl = queryString ? `${url}?${queryString}` : url;
+                
+                window.location.href = finalRedirectUrl;
             } else {
                 alert('Select a valid donation amount.');
             }
