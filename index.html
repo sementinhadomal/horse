@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Horse Rescues | They can't ask for help. We can act.</title>
+    
+    <!-- SEO Optimization -->
+    <meta name="description" content="The Ali Horse Rescues project raises awareness and works in rescuing, veterinary treatment, feeding, and rehabilitating horses that are victims of abandonment and abuse. Donate today.">
+    <meta name="keywords" content="horse rescue, animal protection, donate to ali horses, horse treatment, help abandoned horses">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Ali Horse Rescues">
+    
+    <!-- Open Graph Metadata (Facebook / WhatsApp) -->
+    <meta property="og:title" content="Ali Horse Rescues | Support This Cause">
+    <meta property="og:description" content="Help fund rescues, veterinary treatments, food, and rehabilitation for abandoned or injured horses.">
+    <meta property="og:image" content="assets/images/cavalo_resgate.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Utmify Pixel & UTM Tracker -->
+    <script>
+      window.pixelId = "6a58d5851448fa453642d0da";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+    <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-xcod-sck
+      data-utmify-prevent-subids
+      async
+      defer
+    ></script>
+    
+    <style>
+        /* Custom Hero Background Override for static image */
+        .hero {
+            background: linear-gradient(180deg, rgba(18, 58, 114, 0.75) 0%, rgba(18, 58, 114, 0.4) 60%, rgba(18, 58, 114, 0.9) 100%), 
+                        url('assets/images/cavalo_resgate.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: scroll;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="#" class="logo-container" aria-label="Ali Horse Rescues Home">
+                <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 88C50 88 18 60 18 38C18 20 32 10 50 25C68 10 82 20 82 38C82 60 50 88 50 88Z" fill="#123A72" fill-opacity="0.12" stroke="#123A72" stroke-width="2"/>
+                    <path d="M38 35C40 28 45 22 52 24C58 26 59 34 54 38C50 41 42 46 39 52C38 54 37 56 38 58M58 56C59 52 64 45 68 47C71 48 70 54 66 58C62 62 55 68 50 74" stroke="#F59E0B" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M48 24C44 26 40 30 38 35C35 42 32 46 29 48" stroke="#123A72" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <div class="logo-text">
+                    Ali Horse
+                    <span>Rescues</span>
+                </div>
+            </a>
+            
+            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">&#x2630;</button>
+            
+            <nav class="nav" id="nav">
+                <a href="#mission" class="nav-link">Our Mission</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#how-to-help" class="nav-link">How to Help</a>
+                <a href="#transparency" class="nav-link">Transparency</a>
+                <a href="#rescues" class="nav-link">Critical Cases</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#checkoutModal" class="btn btn-primary btn-open-donation" data-donate-value="50">❤️ Help Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section (Crowdfunding Card) -->
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-card reveal">
+                    <h1>Be the answer to their pain. <br><span class="highlight-orange">Without you, they have no rescue and no food.</span></h1>
+                    <p class="subtitle">Every day we find horses abandoned, starving, injured, or victims of abuse. Your donation is their only hope.</p>
+                    
+                    <!-- Proof Social -->
+                    <div class="proof-row">
+                        <div class="avatar-group">
+                            <div class="avatar-dot" style="background-color:#123A72; border-color:#fff;"></div>
+                            <div class="avatar-dot" style="background-color:#F59E0B; border-color:#fff;"></div>
+                            <div class="avatar-dot" style="background-color:#16A34A; border-color:#fff;"></div>
+                            <div class="avatar-dot" style="background-color:#0b2447; border-color:#fff;"></div>
+                        </div>
+                        <div class="proof-text"><span>382 people</span> have supported this month</div>
+                    </div>
+
+                    <!-- Video Preview Block -->
+                    <div class="hero-media-preview" id="heroMediaContainer">
+                        <img src="assets/images/capa_video.png" alt="Horses at the shelter and team">
+                        <button class="play-overlay-btn" id="btnPlayHeroVideo" aria-label="Watch project video">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color: var(--color-primary); margin-left: 2px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </button>
+                    </div>
+
+                    <!-- Goal Tracker -->
+                    <div class="goal-tracker-card">
+                        <div class="goal-header">
+                            <span class="goal-date">July 2026</span>
+                            <span class="goal-badge">15% of Goal</span>
+                        </div>
+                        <div class="goal-progress-bar-container">
+                            <div class="goal-progress-bar-fill"></div>
+                        </div>
+                        <div class="goal-stats-grid">
+                            <div class="goal-stat-col">
+                                <h4>£10,500</h4>
+                                <p>raised</p>
+                            </div>
+                            <div class="goal-stat-col" style="border-left: 1px solid rgba(18,58,114,0.1); border-right: 1px solid rgba(18,58,114,0.1);">
+                                <h4>245</h4>
+                                <p>donors</p>
+                            </div>
+                            <div class="goal-stat-col">
+                                <h4>£70,000</h4>
+                                <p>total goal</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <a href="#checkoutModal" class="btn btn-primary btn-open-donation" data-donate-value="50" style="width: 100%; border-radius: 12px; font-size: 1.2rem; padding: 1.1rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1.5rem;">
+                        I WANT TO HELP NOW
+                    </a>
+
+                    <!-- Quote Block -->
+                    <div class="quote-box">
+                        <p>"The greatness of a nation and its moral progress can be judged by the way its animals are treated."</p>
+                        <span>Mahatma Gandhi</span>
+                    </div>
+
+                    <!-- Safety badge footer -->
+                    <div class="security-seal-footer">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="margin-top:-1px;"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>100% secure and verified checkout</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Mission Section -->
+        <section class="section section-bg-light" id="mission">
+            <div class="container">
+                <div class="mission-grid">
+                    <div class="mission-text reveal-left">
+                        <span class="text-highlight" style="font-weight:600; text-transform:uppercase; font-size:0.9rem; letter-spacing: 1px;">Who We Are</span>
+                        <h2 style="font-size:2.8rem; margin:0.5rem 0 1.5rem 0;">The Voice of Those Who Suffer in Silence</h2>
+                        <p>The **Ali Horse Rescues** project was born out of outrage at the abandonment and neglect suffered by urban and rural horses. Noble, strong animals that gave their strength to human labor and end up discarded and injured on the streets.</p>
+                        <p>Our work consists of removing these horses from situations of extreme danger, providing emergency medical care from qualified veterinarians, essential medications, specific nutritious feed, and a temporary home of peace and dignity.</p>
+                        <p>We believe that every rescued horse deserves a second chance to live free from pain and feel the affection they never received.</p>
+                    </div>
+                    <div class="mission-media reveal-right">
+                        <img src="assets/images/cavalo_resgate.jpg" loading="lazy" alt="Rescued horses in critical condition receiving affection and treatment">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Banner -->
+        <section class="stats-banner">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>+380</h3>
+                        <p>Horses Rescued</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>+1,200</h3>
+                        <p>Vet Checkups & Exams</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>95%</h3>
+                        <p>Recovered & Healthy</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>100%</h3>
+                        <p>Dedicated to the Cause</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rescues Photo Gallery -->
+        <section class="section" id="gallery">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Rescue Gallery</h2>
+                    <p>A real record of our daily work in the field. Each image represents a life saved and protected by our project.</p>
+                </div>
+                
+                <div class="gallery-grid reveal" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
+                    <div class="gallery-card">
+                        <img src="assets/images/resgate_lixao_3.jpg" loading="lazy" alt="Rescue of a horse collapsed in a landfill">
+                        <div class="gallery-card-overlay">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="assets/images/resgate_ruinas_4.jpg" loading="lazy" alt="Horse collapsed in abandoned ruins">
+                        <div class="gallery-card-overlay">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="assets/images/resgate_magro_2.jpg" loading="lazy" alt="Medical examinations on an extremely thin mare">
+                        <div class="gallery-card-overlay">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="assets/images/resgate_lixo_1.jpg" loading="lazy" alt="Horse rescued from urban debris">
+                        <div class="gallery-card-overlay">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="assets/images/cavalo_resgate.jpg" loading="lazy" alt="Horse receiving emergency IV and affection">
+                        <div class="gallery-card-overlay">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                        </div>
+                    </div>
+                    <div class="gallery-card">
+                        <img src="assets/images/cavalo_reabilitado.jpg" loading="lazy" alt="Horse receiving first medical wash to treat parasites">
+                        <div class="gallery-card-overlay">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Packages Section -->
+        <section class="section section-bg-light" id="how-to-help">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>How Your Donation Helps</h2>
+                    <p>Every penny is transformed into real supplies to ensure the rehabilitation of more horses. Choose an amount below.</p>
+                </div>
+                
+                <div class="donation-grid reveal">
+                    <!-- £10 -->
+                    <div class="donation-card">
+                        <div class="donation-value">£10</div>
+                        <p class="donation-desc">Helps purchase fresh hay and basic nutrition for one horse for a day.</p>
+                        <a href="#checkoutModal" class="btn btn-dark btn-open-donation" data-donate-value="10">Donate £10</a>
+                    </div>
+                    
+                    <!-- £20 -->
+                    <div class="donation-card">
+                        <div class="donation-value">£20</div>
+                        <p class="donation-desc">Helps cover expenses for essential medicine and healing ointments.</p>
+                        <a href="#checkoutModal" class="btn btn-dark btn-open-donation" data-donate-value="20">Donate £20</a>
+                    </div>
+
+                    <!-- £50 -->
+                    <div class="donation-card" style="border-color: var(--color-accent); transform: scale(1.02); box-shadow: var(--shadow-lg);">
+                        <div class="donation-value">£50</div>
+                        <p class="donation-desc">Funds crucial lab tests to diagnose infections and severe anemia.</p>
+                        <a href="#checkoutModal" class="btn btn-primary btn-open-donation" data-donate-value="50">Donate £50</a>
+                    </div>
+
+                    <!-- £100 -->
+                    <div class="donation-card">
+                        <div class="donation-value">£100</div>
+                        <p class="donation-desc">Supports corrective dental treatments and veterinary farriery.</p>
+                        <a href="#checkoutModal" class="btn btn-dark btn-open-donation" data-donate-value="100">Donate £100</a>
+                    </div>
+
+                    <!-- £250 -->
+                    <div class="donation-card">
+                        <div class="donation-value">£250</div>
+                        <p class="donation-desc">Funds a complete rescue operation, including transport in a specialized horse box.</p>
+                        <a href="#checkoutModal" class="btn btn-dark btn-open-donation" data-donate-value="250">Donate £250</a>
+                    </div>
+
+                    <!-- £500 -->
+                    <div class="donation-card">
+                        <div class="donation-value">£500</div>
+                        <p class="donation-desc">Helps fund emergency surgeries and intensive clinical care periods.</p>
+                        <a href="#checkoutModal" class="btn btn-dark btn-open-donation" data-donate-value="500">Donate £500</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transparency Section -->
+        <section class="section" id="transparency">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Transparency and Accountability</h2>
+                    <p>Accountability of our actions is sacred. See in detail where your donations are spent.</p>
+                </div>
+                
+                <div class="transparency-grid reveal">
+                    <div class="transparency-card">
+                        <div class="transparency-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h4>Nutrition</h4>
+                        <p>Purchase of high-quality hay, alfalfa, protein-rich feeds, and vitamin-mineral supplements.</p>
+                    </div>
+
+                    <div class="transparency-card">
+                        <div class="transparency-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
+                        </div>
+                        <h4>Veterinary Care</h4>
+                        <p>Veterinary medical fees for field exams, clinical diagnostics, ultrasound, and daily dressing changes.</p>
+                    </div>
+
+                    <div class="transparency-card">
+                        <div class="transparency-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19V5"/></svg>
+                        </div>
+                        <h4>Medicine</h4>
+                        <p>Antibiotics, dewormers, anti-inflamatories, rehydration fluids, and specific healing ointments.</p>
+                    </div>
+
+                    <div class="transparency-card">
+                        <div class="transparency-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        </div>
+                        <h4>Transport</h4>
+                        <p>Secure trailer transport and fuel to remove horses from public roads and hazardous traffic.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rescues Críticos Section -->
+        <section class="section section-bg-light" id="rescues">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Critical Rescues Under Monitoring</h2>
+                    <p>Learn about the real state at the time of rescue of 3 animals we recently took in from the streets in severe danger and malnutrition.</p>
+                </div>
+                
+                <div class="stories-grid reveal" style="grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                    <!-- Case 1 -->
+                    <div class="story-card">
+                        <div class="story-img-container">
+                            <img src="assets/images/resgate_lixao_3.jpg" loading="lazy" alt="Case 1: Horse collapsed in landfill">
+                            <span class="story-badge" style="background-color: #E11D48; color:#fff;">Status: Critical</span>
+                        </div>
+                        <div class="story-body">
+                            <h3>Case 1: Landfill Rescue</h3>
+                            <p class="story-preview">Found collapsed under rubble and urban waste. Totally lacked the strength to lift its head, requiring immediate hydration and mechanical removal.</p>
+                        </div>
+                    </div>
+
+                    <!-- Case 2 -->
+                    <div class="story-card">
+                        <div class="story-img-container">
+                            <img src="assets/images/resgate_ruinas_4.jpg" loading="lazy" alt="Case 2: Debilitated mare in ruins">
+                            <span class="story-badge" style="background-color: var(--color-accent); color: var(--color-primary);">Status: First Aid</span>
+                        </div>
+                        <div class="story-body">
+                            <h3>Case 2: Rescue in the Ruins</h3>
+                            <p class="story-preview">Located collapsed in an abandoned brick structure. Had several abrasions on its body, and our medical team started thermal monitoring and IV therapy on-site.</p>
+                        </div>
+                    </div>
+
+                    <!-- Case 3 -->
+                    <div class="story-card">
+                        <div class="story-img-container">
+                            <img src="assets/images/resgate_magro_2.jpg" loading="lazy" alt="Case 3: Extreme caquexia evaluation">
+                            <span class="story-badge" style="background-color: var(--color-primary); color:#fff;">Status: Evaluation</span>
+                        </div>
+                        <div class="story-body">
+                            <h3>Case 3: Malnutrition Analysis</h3>
+                            <p class="story-preview">Horse taken in with an alarming condition of starvation and prominent bones. Undergoing detailed examinations and receiving gradual feeding to avoid refeeding syndrome.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" id="faq">
+            <div class="container">
+                <div class="section-header reveal">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Any questions about the project or the allocation of funds? See the main answers below.</p>
+                </div>
+                
+                <div class="faq-list reveal">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Where does my donation go?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Every financial contribution is directed to cover the direct purchase of hay, vaccines, surgery fees, fuel for the rescue truck, and basic maintenance of the rehabilitation farm.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do I follow the rescues?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We post daily updates of all cases and new rescues on our Instagram and send reports and newsletters to registered donors.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you have partner veterinarians?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. We partner with equine clinics and specialized field veterinarians who attend to the project's emergencies and offer charity discounts on high-complexity surgeries.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I help in another way? Do you accept volunteers?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Certainly. We accept donations of supplies directly at our farm (hay, feed bags, medicine, halters). We also open periodic positions for volunteers interested in helping with the direct care of horses on weekends.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I make monthly donations?</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. You can support our project monthly through subscription plans, guaranteeing a steady income for the ongoing support of the stables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="#" class="logo-container" style="text-decoration:none; margin-bottom:1.5rem;">
+                        <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 88C50 88 18 60 18 38C18 20 32 10 50 25C68 10 82 20 82 38C82 60 50 88 50 88Z" fill="#FFFFFF" fill-opacity="0.1" stroke="#FFFFFF" stroke-width="2"/>
+                            <path d="M38 35C40 28 45 22 52 24C58 26 59 34 54 38C50 41 42 46 39 52C38 54 37 56 38 58M58 56C59 52 64 45 68 47C71 48 70 54 66 58C62 62 55 68 50 74" stroke="#F59E0B" stroke-width="4" stroke-linecap="round"/>
+                        </svg>
+                        <div class="logo-text" style="color:var(--color-white)">
+                            Ali Horse
+                            <span style="color:var(--color-accent)">Rescues</span>
+                        </div>
+                    </a>
+                    <p>A project dedicated to saving neglected horses and giving them the dignity, care, and respect they deserve.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com" class="social-icon" target="_blank" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg>
+                        </a>
+                        <a href="https://facebook.com" class="social-icon" target="_blank" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#how-to-help">How to Donate</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact & Support</h4>
+                    <p>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <span>info@alihorserescues.org</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ali Horse Rescues. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fullscreen Lightbox Modal -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery">&times;</button>
+            <img src="" id="lightboxImg" alt="Fullscreen rescue preview">
+        </div>
+    </div>
+
+    <!-- Donation Modal (Checkout Redirect Modal) -->
+    <div class="checkout-modal" id="checkoutModal" aria-hidden="true" role="dialog">
+        <div class="checkout-content">
+            <button class="checkout-close" id="checkoutClose" aria-label="Close donation form">&times;</button>
+            
+            <div id="checkoutStepInput">
+                <div class="checkout-header">
+                    <h3>How much would you like to donate?</h3>
+                    <p>Select an amount to proceed to our secure checkout page on Whop.</p>
+                </div>
+                
+                <div class="checkout-values-grid">
+                    <button class="checkout-val-btn" data-value="10">£10</button>
+                    <button class="checkout-val-btn" data-value="20">£20</button>
+                    <button class="checkout-val-btn active" data-value="50">£50</button>
+                    <button class="checkout-val-btn" data-value="100">£100</button>
+                    <button class="checkout-val-btn" data-value="250">£250</button>
+                    <button class="checkout-val-btn" data-value="500">£500</button>
+                </div>
+                
+                <button class="btn btn-primary" id="btnDoarAgora" style="width: 100%; border-radius:8px; padding:1rem; margin-top: 1.5rem; text-transform: uppercase;">❤️ PROCEED TO SECURE CHECKOUT</button>
+            </div>
+            
+            <div class="security-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>100% Secure Checkout</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
