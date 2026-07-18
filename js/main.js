@@ -172,7 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "70": "https://whop.com/checkout/ali-horses-70",
         "100": "https://whop.com/checkout/ali-horses-100",
         "250": "https://whop.com/checkout/ali-horses-250",
-        "500": "https://whop.com/checkout/ali-horses-500"
+        "500": "https://whop.com/checkout/ali-horses-500",
+        "1000": "https://whop.com/checkout/ali-horses-1000"
     };
 
     // Mapping of Pound amounts to Whop recurring (subscription) checkout links
@@ -184,7 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "70": "https://whop.com/checkout/ali-horses-70-monthly",
         "100": "https://whop.com/checkout/ali-horses-100-monthly",
         "250": "https://whop.com/checkout/ali-horses-250-monthly",
-        "500": "https://whop.com/checkout/ali-horses-500-monthly"
+        "500": "https://whop.com/checkout/ali-horses-500-monthly",
+        "1000": "https://whop.com/checkout/ali-horses-1000-monthly"
     };
 
     let currentSelectedValue = '50'; // default starting choice
