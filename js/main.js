@@ -165,28 +165,28 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Mapping of Pound amounts to Whop redirect checkout links
     const WHOP_LINKS = {
-        "10": "https://whop.com/checkout/ali-horses-10",
-        "20": "https://whop.com/checkout/ali-horses-20",
-        "30": "https://whop.com/checkout/ali-horses-30",
-        "50": "https://whop.com/checkout/ali-horses-50",
-        "70": "https://whop.com/checkout/ali-horses-70",
-        "100": "https://whop.com/checkout/ali-horses-100",
-        "250": "https://whop.com/checkout/ali-horses-250",
-        "500": "https://whop.com/checkout/ali-horses-500",
-        "1000": "https://whop.com/checkout/ali-horses-1000"
+        "10": "https://whop.com/checkout/plan_epwqXWaWXs6rD",
+        "20": "https://whop.com/checkout/plan_ESj0ekhQCEC9F",
+        "30": "https://whop.com/checkout/plan_Rg2H9oyFTW1WL",
+        "50": "https://whop.com/checkout/plan_xsuTp1nPM75ZQ",
+        "70": "https://whop.com/checkout/plan_bK9BZmrz4Wi6R",
+        "100": "https://whop.com/checkout/plan_dgYHQSD98dmRF",
+        "250": "https://whop.com/checkout/plan_58fPBG2E2ApXl",
+        "500": "https://whop.com/checkout/plan_sonaYf5bEezND",
+        "1000": "https://whop.com/checkout/plan_Vbwy7jEp0ySgC"
     };
 
     // Mapping of Pound amounts to Whop recurring (subscription) checkout links
     const WHOP_RECURRING_LINKS = {
-        "10": "https://whop.com/checkout/ali-horses-10-monthly",
-        "20": "https://whop.com/checkout/ali-horses-20-monthly",
-        "30": "https://whop.com/checkout/ali-horses-30-monthly",
-        "50": "https://whop.com/checkout/ali-horses-50-monthly",
-        "70": "https://whop.com/checkout/ali-horses-70-monthly",
-        "100": "https://whop.com/checkout/ali-horses-100-monthly",
-        "250": "https://whop.com/checkout/ali-horses-250-monthly",
-        "500": "https://whop.com/checkout/ali-horses-500-monthly",
-        "1000": "https://whop.com/checkout/ali-horses-1000-monthly"
+        "10": "https://whop.com/checkout/plan_aC1YxEHhP1nEG",
+        "20": "https://whop.com/checkout/plan_XPvBFB1E5RdlV",
+        "30": "https://whop.com/checkout/plan_2KmlkBgmFcygi",
+        "50": "https://whop.com/checkout/plan_Qfy9kPS24R8D7",
+        "70": "https://whop.com/checkout/plan_hqQXQ62i8Xbzz",
+        "100": "https://whop.com/checkout/plan_llopulr3jqDpx",
+        "250": "https://whop.com/checkout/plan_uLHkXwS5VK9nM",
+        "500": "https://whop.com/checkout/plan_OhTOS29mduGb5",
+        "1000": "https://whop.com/checkout/plan_9CNMNYrzS3sVe"
     };
 
     let currentSelectedValue = '50'; // default starting choice
