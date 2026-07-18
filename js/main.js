@@ -175,6 +175,18 @@ document.addEventListener('DOMContentLoaded', () => {
         "500": "https://whop.com/checkout/ali-horses-500"
     };
 
+    // Mapping of Pound amounts to Whop recurring (subscription) checkout links
+    const WHOP_RECURRING_LINKS = {
+        "10": "https://whop.com/checkout/ali-horses-10-monthly",
+        "20": "https://whop.com/checkout/ali-horses-20-monthly",
+        "30": "https://whop.com/checkout/ali-horses-30-monthly",
+        "50": "https://whop.com/checkout/ali-horses-50-monthly",
+        "70": "https://whop.com/checkout/ali-horses-70-monthly",
+        "100": "https://whop.com/checkout/ali-horses-100-monthly",
+        "250": "https://whop.com/checkout/ali-horses-250-monthly",
+        "500": "https://whop.com/checkout/ali-horses-500-monthly"
+    };
+
     let currentSelectedValue = '50'; // default starting choice
 
     const openCheckout = (initialValue = '') => {
@@ -253,7 +265,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Redirect to the chosen Whop checkout link on click
     if (btnDoarAgora) {
         btnDoarAgora.addEventListener('click', () => {
-            const url = WHOP_LINKS[currentSelectedValue];
+            const recurringCheckbox = document.getElementById('recurringCheckbox');
+            const isRecurring = recurringCheckbox && recurringCheckbox.checked;
+            
+            const linksMap = isRecurring ? WHOP_RECURRING_LINKS : WHOP_LINKS;
+            const url = linksMap[currentSelectedValue];
+            
             if (url) {
                 // Append UTM query parameters to Whop URL
                 const utmData = getUtmData();

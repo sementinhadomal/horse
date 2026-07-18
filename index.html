@@ -550,7 +550,14 @@
                     <button class="checkout-val-btn" data-value="500">£500</button>
                 </div>
                 
-                <button class="btn btn-primary" id="btnDoarAgora" style="width: 100%; border-radius:8px; padding:1rem; margin-top: 1.5rem; text-transform: uppercase;">❤️ PROCEED TO SECURE CHECKOUT</button>
+                <div class="recurring-toggle-container" style="margin: 1.2rem 0; display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: rgba(18,58,114,0.05); padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(18,58,114,0.1);">
+                    <input type="checkbox" id="recurringCheckbox" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--color-primary);">
+                    <label for="recurringCheckbox" style="font-size: 0.95rem; color: var(--color-primary); cursor: pointer; font-weight: 600; user-select: none; display: flex; align-items: center; gap: 0.4rem;">
+                        🔄 Make this a monthly recurring donation
+                    </label>
+                </div>
+                
+                <button class="btn btn-primary" id="btnDoarAgora" style="width: 100%; border-radius:8px; padding:1rem; margin-top: 0.5rem; text-transform: uppercase;">❤️ PROCEED TO SECURE CHECKOUT</button>
             </div>
             
             <div class="security-badge">
