@@ -132,29 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Video Play Cards on Demand (Hidden/Removed placeholder)
-    // Note: Video play features are ready for when video links are provided.
-    const btnPlayHeroVideo = document.getElementById('btnPlayHeroVideo');
-    const heroMediaContainer = document.getElementById('heroMediaContainer');
-    
-    if (btnPlayHeroVideo && heroMediaContainer) {
-        btnPlayHeroVideo.addEventListener('click', () => {
-            const videoEl = document.createElement('video');
-            videoEl.src = 'assets/videos/video_principal.mp4';
-            videoEl.autoplay = true;
-            videoEl.loop = true;
-            videoEl.muted = true; // Enforces muted in all browsers
-            videoEl.defaultMuted = true; // Fallback helper
-            videoEl.playsInline = true;
-            videoEl.controls = true;
-            videoEl.style.width = '100%';
-            videoEl.style.height = '100%';
-            videoEl.style.objectFit = 'cover';
-            
-            heroMediaContainer.innerHTML = '';
-            heroMediaContainer.appendChild(videoEl);
-        });
-    }
+    // Video Play Cards on Demand (Removed in UK version since video is in Portuguese)
 
     // 6. Checkout Modal & Donation Value Selection (Whop Direct Redirection)
     const checkoutModal = document.getElementById('checkoutModal');
