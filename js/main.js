@@ -312,7 +312,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
                 localStorage.setItem('ali_cavalos.donor_shipping', JSON.stringify(donorData));
 
-                // Append UTM query parameters + Donor info to Whop URL
+                // Append return URL, UTM parameters + Donor info to Whop URL
+                const returnUrl = window.location.origin + '/obrigado.html';
                 const utmData = getUtmData();
                 const params = new URLSearchParams();
                 
@@ -320,9 +321,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (val) params.set(key, val);
                 });
 
+                params.set('return_url', returnUrl);
+                params.set('redirect_url', returnUrl);
+                params.set('redirect_uri', returnUrl);
                 params.set('gift', currentSelectedGiftName);
                 params.set('donor_name', nameEl.value.trim());
                 params.set('donor_email', emailEl.value.trim());
+                params.set('amount', currentSelectedValue);
+                params.set('recurring', isRecurring ? 'true' : 'false');
 
                 const queryString = params.toString();
                 const finalRedirectUrl = queryString ? `${url}?${queryString}` : url;
