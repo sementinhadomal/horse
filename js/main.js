@@ -134,14 +134,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Video Play Cards on Demand (Removed in UK version since video is in Portuguese)
 
-    // 6. Checkout Modal & Donation Value Selection (Whop Direct Redirection)
+    // 6. Checkout Modal, Gift Selection & Shipping Step (Whop Direct Redirection)
     const checkoutModal = document.getElementById('checkoutModal');
     const checkoutClose = document.getElementById('checkoutClose');
     const openModalBtns = document.querySelectorAll('.btn-open-donation');
     const checkoutValBtns = document.querySelectorAll('.checkout-val-btn');
+    const giftCards = document.querySelectorAll('.gift-card');
+    
+    const checkoutStepInput = document.getElementById('checkoutStepInput');
+    const checkoutStepShipping = document.getElementById('checkoutStepShipping');
+    
+    const btnGoToShipping = document.getElementById('btnGoToShipping');
+    const btnBackToStep1 = document.getElementById('btnBackToStep1');
     const btnDoarAgora = document.getElementById('btnDoarAgora');
     
-    // Mapping of Pound amounts to Whop redirect checkout links
+    const summaryAmount = document.getElementById('summaryAmount');
+    const summaryType = document.getElementById('summaryType');
+    const summaryGift = document.getElementById('summaryGift');
+    
+    // Mapping of Euro amounts to Whop redirect checkout links
     const WHOP_LINKS = {
         "10": "https://whop.com/checkout/plan_epwqXWaWXs6rD",
         "20": "https://whop.com/checkout/plan_ESj0ekhQCEC9F",
@@ -154,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "1000": "https://whop.com/checkout/plan_Vbwy7jEp0ySgC"
     };
 
-    // Mapping of Pound amounts to Whop recurring (subscription) checkout links
+    // Mapping of Euro amounts to Whop recurring (subscription) checkout links
     const WHOP_RECURRING_LINKS = {
         "10": "https://whop.com/checkout/plan_aC1YxEHhP1nEG",
         "20": "https://whop.com/checkout/plan_XPvBFB1E5RdlV",
@@ -167,16 +178,32 @@ document.addEventListener('DOMContentLoaded', () => {
         "1000": "https://whop.com/checkout/plan_9CNMNYrzS3sVe"
     };
 
-    let currentSelectedValue = '50'; // default starting choice
+    let currentSelectedValue = '50';
+    let currentSelectedGiftId = 'colar_1';
+    let currentSelectedGiftName = 'Profil Équin (Or)';
+
+    // Gift Card Selection Handler
+    giftCards.forEach(card => {
+        card.addEventListener('click', () => {
+            giftCards.forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            currentSelectedGiftId = card.getAttribute('data-gift-id');
+            currentSelectedGiftName = card.getAttribute('data-gift-name');
+        });
+    });
 
     const openCheckout = (initialValue = '') => {
         checkoutModal.classList.add('active');
         checkoutModal.setAttribute('aria-hidden', 'false');
         
+        // Reset to Step 1
+        if (checkoutStepInput && checkoutStepShipping) {
+            checkoutStepInput.style.display = 'block';
+            checkoutStepShipping.style.display = 'none';
+        }
+        
         if (initialValue) {
             currentSelectedValue = initialValue;
-            
-            // Highlight selected button, remove active from others
             checkoutValBtns.forEach(btn => {
                 const btnVal = btn.getAttribute('data-value');
                 if (btnVal === initialValue) {
@@ -197,26 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const value = btn.getAttribute('data-donate-value');
-            
-            // If clicked directly inside a specific donation package card, redirect immediately
-            if (btn.closest('.donation-card')) {
-                const url = WHOP_LINKS[value];
-                if (url) {
-                    // Append UTM query parameters to Whop URL
-                    const utmData = getUtmData();
-                    const params = new URLSearchParams();
-                    Object.entries(utmData).forEach(([key, val]) => {
-                        if (val) params.set(key, val);
-                    });
-                    const queryString = params.toString();
-                    const finalRedirectUrl = queryString ? `${url}?${queryString}` : url;
-                    
-                    window.location.href = finalRedirectUrl;
-                    return;
-                }
-            }
-            
-            // Otherwise open modal for value selection
             openCheckout(value);
         });
     });
@@ -242,9 +249,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Redirect to the chosen Whop checkout link on click
+    // Step 1 -> Step 2 transition
+    if (btnGoToShipping) {
+        btnGoToShipping.addEventListener('click', () => {
+            const recurringCheckbox = document.getElementById('recurringCheckbox');
+            const isRecurring = recurringCheckbox && recurringCheckbox.checked;
+
+            if (summaryAmount) summaryAmount.innerText = `${currentSelectedValue} €`;
+            if (summaryType) summaryType.innerText = isRecurring ? '(Don mensuel récurrent)' : '(Don ponctuel)';
+            if (summaryGift) summaryGift.innerText = currentSelectedGiftName;
+
+            checkoutStepInput.style.display = 'none';
+            checkoutStepShipping.style.display = 'block';
+        });
+    }
+
+    // Step 2 -> Step 1 back transition
+    if (btnBackToStep1) {
+        btnBackToStep1.addEventListener('click', () => {
+            checkoutStepShipping.style.display = 'none';
+            checkoutStepInput.style.display = 'block';
+        });
+    }
+
+    // Redirect to the chosen Whop checkout link on click after shipping details
     if (btnDoarAgora) {
         btnDoarAgora.addEventListener('click', () => {
+            const nameEl = document.getElementById('shipName');
+            const emailEl = document.getElementById('shipEmail');
+            const phoneEl = document.getElementById('shipPhone');
+            const addressEl = document.getElementById('shipAddress');
+            const zipEl = document.getElementById('shipZip');
+            const cityEl = document.getElementById('shipCity');
+            const countryEl = document.getElementById('shipCountry');
+
+            if (!nameEl.value.trim() || !emailEl.value.trim() || !phoneEl.value.trim() || !addressEl.value.trim() || !zipEl.value.trim() || !cityEl.value.trim()) {
+                alert('Veuillez remplir tous les champs obligatoires (*) du formulaire d\'expédition.');
+                return;
+            }
+
             const recurringCheckbox = document.getElementById('recurringCheckbox');
             const isRecurring = recurringCheckbox && recurringCheckbox.checked;
             
@@ -252,18 +295,41 @@ document.addEventListener('DOMContentLoaded', () => {
             const url = linksMap[currentSelectedValue];
             
             if (url) {
-                // Append UTM query parameters to Whop URL
+                // Save donor shipping details & gift locally
+                const donorData = {
+                    name: nameEl.value.trim(),
+                    email: emailEl.value.trim(),
+                    phone: phoneEl.value.trim(),
+                    address: addressEl.value.trim(),
+                    zip: zipEl.value.trim(),
+                    city: cityEl.value.trim(),
+                    country: countryEl.value,
+                    giftId: currentSelectedGiftId,
+                    giftName: currentSelectedGiftName,
+                    amount: currentSelectedValue,
+                    recurring: isRecurring,
+                    date: new Date().toISOString()
+                };
+                localStorage.setItem('ali_cavalos.donor_shipping', JSON.stringify(donorData));
+
+                // Append UTM query parameters + Donor info to Whop URL
                 const utmData = getUtmData();
                 const params = new URLSearchParams();
+                
                 Object.entries(utmData).forEach(([key, val]) => {
                     if (val) params.set(key, val);
                 });
+
+                params.set('gift', currentSelectedGiftName);
+                params.set('donor_name', nameEl.value.trim());
+                params.set('donor_email', emailEl.value.trim());
+
                 const queryString = params.toString();
                 const finalRedirectUrl = queryString ? `${url}?${queryString}` : url;
                 
                 window.location.href = finalRedirectUrl;
             } else {
-                alert('Select a valid donation amount.');
+                alert('Veuillez sélectionner un montant de don valide.');
             }
         });
     }
