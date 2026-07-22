@@ -295,7 +295,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const url = linksMap[currentSelectedValue];
             
             if (url) {
-                // Save donor shipping details & gift locally
+                // Calculate BRL equivalent for Utmify tracking (1 EUR = 5.80 BRL => 30 EUR = 174 BRL)
+                const eurAmount = parseFloat(currentSelectedValue) || 50;
+                const brlAmount = (eurAmount * 5.80).toFixed(2);
+
                 const donorData = {
                     name: nameEl.value.trim(),
                     email: emailEl.value.trim(),
@@ -307,10 +310,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     giftId: currentSelectedGiftId,
                     giftName: currentSelectedGiftName,
                     amount: currentSelectedValue,
-                // Calculate BRL equivalent for Utmify tracking (1 EUR = 6.20 BRL)
-                const eurAmount = parseFloat(currentSelectedValue) || 50;
-                const brlAmount = (eurAmount * 6.20).toFixed(2);
-                donorData.amountBrl = brlAmount;
+                    amountBrl: brlAmount,
+                    recurring: isRecurring,
+                    date: new Date().toISOString()
+                };
 
                 localStorage.setItem('ali_cavalos.donor_shipping', JSON.stringify(donorData));
 

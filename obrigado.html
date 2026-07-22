@@ -297,9 +297,9 @@
                 const giftName = urlParams.get('gift') || donorData.giftName || 'Profil Équin (Or)';
                 const giftId = donorData.giftId || 'colar_1';
 
-                // Calculate BRL value for Utmify (1 EUR = 6.20 BRL)
+                // Calculate BRL value for Utmify (1 EUR = 5.80 BRL => 30 EUR = 174 BRL)
                 const numericEur = parseFloat(amountEur) || 50;
-                const amountBrl = urlParams.get('amount_brl') || urlParams.get('value') || urlParams.get('price') || donorData.amountBrl || (numericEur * 6.20).toFixed(2);
+                const amountBrl = urlParams.get('amount_brl') || urlParams.get('value') || urlParams.get('price') || donorData.amountBrl || (numericEur * 5.80).toFixed(2);
 
                 document.getElementById('displayDonorName').innerText = name;
                 document.getElementById('displayDonorEmail').innerText = email;
