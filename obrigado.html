@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci pour votre Don ! | Ali Horse Rescues</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- Utmify Pixel & UTM Tracker for Conversion Tracking -->
+    <script>
+      window.pixelId = "6a58d5851448fa453642d0da";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+    <script
+      src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+      data-utmify-prevent-xcod-sck
+      data-utmify-prevent-subids
+      async
+      defer
+    ></script>
+
+    <style>
+        body {
+            background-color: #F4F1EA;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .thankyou-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 60px 20px;
+        }
+
+        .thankyou-card {
+            background: #ffffff;
+            border: 2px solid var(--color-primary);
+            border-radius: var(--radius-lg);
+            max-width: 580px;
+            width: 100%;
+            padding: 3rem 2.5rem;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            position: relative;
+        }
+
+        .success-icon-container {
+            width: 80px;
+            height: 80px;
+            background: rgba(22, 163, 74, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            color: #16A34A;
+        }
+
+        .thankyou-card h1 {
+            font-size: 2.2rem;
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .thankyou-card p.lead {
+            font-size: 1.1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .order-details-box {
+            background: rgba(18, 58, 114, 0.04);
+            border: 1px solid rgba(18, 58, 114, 0.12);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .order-details-box h3 {
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(18, 58, 114, 0.1);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.65rem;
+            font-size: 0.95rem;
+        }
+
+        .detail-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .detail-label {
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        .detail-value {
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .gift-preview-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #ffffff;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            margin-top: 1rem;
+        }
+
+        .gift-preview-container img {
+            width: 54px;
+            height: 54px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .gift-preview-text {
+            font-size: 0.9rem;
+            color: var(--color-primary);
+            line-height: 1.3;
+        }
+
+        .gift-preview-text strong {
+            display: block;
+            color: var(--color-accent-hover);
+        }
+
+        .next-steps-list {
+            text-align: left;
+            background: #FFFBEB;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #92400E;
+        }
+
+        .next-steps-list h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .next-steps-list ul {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        .next-steps-list li {
+            margin-bottom: 0.35rem;
+        }
+
+        @media (max-width: 480px) {
+            .thankyou-card {
+                padding: 2rem 1.25rem;
+            }
+            .thankyou-card h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="logo-container" aria-label="Ali Horse Rescues Accueil">
+                <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 88C50 88 18 60 18 38C18 20 32 10 50 25C68 10 82 20 82 38C82 60 50 88 50 88Z" fill="#123A72" fill-opacity="0.12" stroke="#123A72" stroke-width="2"/>
+                    <path d="M38 35C40 28 45 22 52 24C58 26 59 34 54 38C50 41 42 46 39 52C38 54 37 56 38 58M58 56C59 52 64 45 68 47C71 48 70 54 66 58C62 62 55 68 50 74" stroke="#F59E0B" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M48 24C44 26 40 30 38 35C35 42 32 46 29 48" stroke="#123A72" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+                <div class="logo-text">
+                    Ali Horse
+                    <span>Rescues</span>
+                </div>
+            </a>
+            
+            <a href="index.html" class="btn btn-dark" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">
+                Retour au site
+            </a>
+        </div>
+    </header>
+
+    <div class="thankyou-wrapper">
+        <div class="thankyou-card">
+            <div class="success-icon-container">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+            </div>
+
+            <h1>Merci pour votre soutien précieux ! ❤️</h1>
+            <p class="lead">Votre générosité permet de sauver, soigner et nourrir les chevaux abandonnés. Grâce à vous, un animal retrouve l'espoir et la dignité.</p>
+
+            <div class="order-details-box">
+                <h3>
+                    <span>Récapitulatif de votre Don</span>
+                    <span style="font-size: 0.75rem; font-weight: 600; background: #16A34A; color: #fff; padding: 0.15rem 0.5rem; border-radius: 50px;">Confirmé</span>
+                </h3>
+
+                <div class="detail-row">
+                    <span class="detail-label">Donateur :</span>
+                    <span class="detail-value" id="displayDonorName">Marie Dupont</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">E-mail :</span>
+                    <span class="detail-value" id="displayDonorEmail">marie@email.com</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Montant du Don :</span>
+                    <span class="detail-value" id="displayDonorAmount">50 €</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Type de Don :</span>
+                    <span class="detail-value" id="displayDonorType">Don Ponctuel</span>
+                </div>
+
+                <div class="gift-preview-container">
+                    <img id="displayGiftImg" src="assets/images/colar_1.jpg" alt="Collier souvenir">
+                    <div class="gift-preview-text">
+                        <span>Collier Souvenir Offert :</span>
+                        <strong id="displayGiftName">Profil Équin (Or)</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="next-steps-list">
+                <h4>🚚 Prochaines étapes pour votre cadeau :</h4>
+                <ul>
+                    <li>Votre don a bien été enregistré avec succès par la plateforme sécurisée Whop.</li>
+                    <li>Notre équipe prépare votre <strong>collier souvenir offert</strong> qui sera expédié à l'adresse de livraison indiquée.</li>
+                    <li>Vous recevrez la confirmation de suivi par e-mail ou WhatsApp.</li>
+                </ul>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="index.html" class="btn btn-primary" style="flex: 1; min-width: 200px; padding: 1rem; text-transform: uppercase;">
+                    Retourner à l'accueil
+                </a>
+                <a href="https://instagram.com" target="_blank" class="btn btn-dark" style="flex: 1; min-width: 200px; padding: 1rem;">
+                    Suivre les resgatés 📸
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="padding: 2rem 0; margin-top: auto;">
+        <div class="container text-center" style="text-align: center;">
+            <p>&copy; 2026 Ali Horse Rescues. Tous droits réservés. | info@alihorserescues.org</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                // Read stored donor details from localStorage or URL params
+                const rawData = localStorage.getItem('ali_cavalos.donor_shipping');
+                const urlParams = new URLSearchParams(window.location.search);
+                
+                let donorData = {};
+                if (rawData) {
+                    donorData = JSON.parse(rawData);
+                }
+
+                const name = urlParams.get('donor_name') || donorData.name || 'Généreux Donateur';
+                const email = urlParams.get('donor_email') || donorData.email || '-';
+                const amount = urlParams.get('amount') || donorData.amount || '50';
+                const recurring = urlParams.get('recurring') === 'true' || donorData.recurring;
+                const giftName = urlParams.get('gift') || donorData.giftName || 'Profil Équin (Or)';
+                const giftId = donorData.giftId || 'colar_1';
+
+                document.getElementById('displayDonorName').innerText = name;
+                document.getElementById('displayDonorEmail').innerText = email;
+                document.getElementById('displayDonorAmount').innerText = `${amount} €`;
+                document.getElementById('displayDonorType').innerText = recurring ? 'Mensuel Récurrent' : 'Don Ponctuel';
+                document.getElementById('displayGiftName').innerText = giftName;
+
+                // Update gift image preview
+                const giftImageMap = {
+                    'colar_1': 'assets/images/colar_1.jpg',
+                    'colar_2': 'assets/images/colar_2.jpg',
+                    'colar_3': 'assets/images/colar_3.jpg',
+                    'colar_4': 'assets/images/colar_4.jpg'
+                };
+
+                if (giftImageMap[giftId]) {
+                    document.getElementById('displayGiftImg').src = giftImageMap[giftId];
+                }
+            } catch (e) {
+                console.error('Error populating thank you page data:', e);
+            }
+        });
+    </script>
+</body>
+</html>
