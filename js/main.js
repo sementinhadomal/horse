@@ -307,9 +307,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     giftId: currentSelectedGiftId,
                     giftName: currentSelectedGiftName,
                     amount: currentSelectedValue,
-                    recurring: isRecurring,
-                    date: new Date().toISOString()
-                };
+                // Calculate BRL equivalent for Utmify tracking (1 EUR = 6.20 BRL)
+                const eurAmount = parseFloat(currentSelectedValue) || 50;
+                const brlAmount = (eurAmount * 6.20).toFixed(2);
+                donorData.amountBrl = brlAmount;
+
                 localStorage.setItem('ali_cavalos.donor_shipping', JSON.stringify(donorData));
 
                 // Append return URL, UTM parameters + Donor info to Whop URL
@@ -328,6 +330,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 params.set('donor_name', nameEl.value.trim());
                 params.set('donor_email', emailEl.value.trim());
                 params.set('amount', currentSelectedValue);
+                params.set('amount_eur', currentSelectedValue);
+                params.set('amount_brl', brlAmount);
+                params.set('price', brlAmount);
+                params.set('value', brlAmount);
+                params.set('currency', 'BRL');
                 params.set('recurring', isRecurring ? 'true' : 'false');
 
                 const queryString = params.toString();

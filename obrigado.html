@@ -292,14 +292,18 @@
 
                 const name = urlParams.get('donor_name') || donorData.name || 'Généreux Donateur';
                 const email = urlParams.get('donor_email') || donorData.email || '-';
-                const amount = urlParams.get('amount') || donorData.amount || '50';
+                const amountEur = urlParams.get('amount_eur') || urlParams.get('amount') || donorData.amount || '50';
                 const recurring = urlParams.get('recurring') === 'true' || donorData.recurring;
                 const giftName = urlParams.get('gift') || donorData.giftName || 'Profil Équin (Or)';
                 const giftId = donorData.giftId || 'colar_1';
 
+                // Calculate BRL value for Utmify (1 EUR = 6.20 BRL)
+                const numericEur = parseFloat(amountEur) || 50;
+                const amountBrl = urlParams.get('amount_brl') || urlParams.get('value') || urlParams.get('price') || donorData.amountBrl || (numericEur * 6.20).toFixed(2);
+
                 document.getElementById('displayDonorName').innerText = name;
                 document.getElementById('displayDonorEmail').innerText = email;
-                document.getElementById('displayDonorAmount').innerText = `${amount} €`;
+                document.getElementById('displayDonorAmount').innerText = `${amountEur} €`;
                 document.getElementById('displayDonorType').innerText = recurring ? 'Mensuel Récurrent' : 'Don Ponctuel';
                 document.getElementById('displayGiftName').innerText = giftName;
 
@@ -313,6 +317,23 @@
 
                 if (giftImageMap[giftId]) {
                     document.getElementById('displayGiftImg').src = giftImageMap[giftId];
+                }
+
+                // Explicit Utmify conversion trigger
+                window.utmifyOrder = {
+                    orderId: 'DON-' + Math.floor(100000 + Math.random() * 900000),
+                    email: email,
+                    name: name,
+                    price: parseFloat(amountBrl),
+                    priceEur: numericEur,
+                    currency: 'BRL'
+                };
+
+                if (window.utmify && typeof window.utmify === 'function') {
+                    window.utmify('track', 'Purchase', {
+                        value: parseFloat(amountBrl),
+                        currency: 'BRL'
+                    });
                 }
             } catch (e) {
                 console.error('Error populating thank you page data:', e);
